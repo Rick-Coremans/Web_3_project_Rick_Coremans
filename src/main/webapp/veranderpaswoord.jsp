@@ -31,6 +31,9 @@
     </c:if>
     <c:if test="${user != null}">
         <p>Verander je paswoord.</p>
+        <c:if test="${error != null}">
+            <p>${error}</p>
+        </c:if>
         <form action="Controller?command=ChangePassword" method="post" novalidate="novalidate">
             <p><label for="userid">User id</label><input type="text" name="userid" id="userid" value=""></p>
             <p><label for="oudpassword">Old Password</label><input type="password" name="oudpassword" id="oudpassword" value=""></p>

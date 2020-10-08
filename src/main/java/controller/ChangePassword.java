@@ -9,15 +9,21 @@ public class ChangePassword extends RequestHandler{
         String newPassword = request.getParameter("nieuwpassword");
         String oldPassword = request.getParameter("oudpassword");
         String userid = request.getParameter("userid");
-       // try {
+        try {
             if (service.get(userid).isCorrectPassword(oldPassword)) {
                 service.get(userid).setPassword(newPassword);
             }
-      /*  }
+            else {
+                String error = "geef een valid userid en password";
+                request.setAttribute("error", error);
+                return "veranderpaswoord.jsp";
+            }
+        }
         catch (Exception e) {
             String error = "geef een valid userid en password";
             request.setAttribute("error", error);
-        } */
+            return "veranderpaswoord.jsp";
+        }
 
         return "index.jsp";
     }
