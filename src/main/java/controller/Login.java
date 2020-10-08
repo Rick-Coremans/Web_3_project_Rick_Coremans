@@ -13,6 +13,10 @@ public class Login extends RequestHandler {
             if (service.get(userid).isCorrectPassword(password)) {
                 session.setAttribute("user", service.get(request.getParameter("userid")));
             }
+            else {
+                String error = "geef een valid userid en password";
+                request.setAttribute("error", error);
+            }
         }
         catch (Exception e) {
             String error = "geef een valid userid en password";

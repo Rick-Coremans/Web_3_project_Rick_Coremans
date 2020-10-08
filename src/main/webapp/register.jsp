@@ -18,6 +18,7 @@
 <li><a href="Controller">Home</a></li>
 <li><a href="Controller?command=Overview">Overview</a></li>
 <li id="actual"><a href="Controller?command=Register">Register</a></li>
+    <li><a href="Controller?command=ChangePasswordPagina">Verander paswoord</a></li>
 </ul>
 </nav>
 <h2>
@@ -56,3 +57,6 @@ Register
 </div>
 </body>
 </html>
+
+
+
